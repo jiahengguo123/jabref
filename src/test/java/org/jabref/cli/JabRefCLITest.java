@@ -155,12 +155,16 @@ class JabRefCLITest {
                 new Pair<>("Country", "County"));
 
         String expected = """
-                Apple   : Slice
-                Bread   : Loaf
-                Paper   : Sheet
-                Country : County
-                """;
+            Apple   : Slice
+            Bread   : Loaf
+            Paper   : Sheet
+            Country : County
+            """;
 
-        assertEquals(expected, JabRefCLI.alignStringTable(given));
+        String actual = JabRefCLI.alignStringTable(given);
+        System.out.println("Expected: |" + expected + "|");
+        System.out.println("Actual: |" + actual + "|");
+        assertEquals(expected, actual);
     }
+
 }
